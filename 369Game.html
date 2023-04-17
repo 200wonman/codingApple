@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>369</title>
+</head>
+<body>
+
+    <input id="inputNum"  placeholder="숫자입력">
+    <button id="btn" type="button">입력</button>
+
+
+
+    <script>
+        const inputNum = document.getElementById('inputNum');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(){
+
+            if(inputNum.value % 9 === 0) {
+                alert("짝짝");
+            } else if (inputNum.value % 3 === 0) {
+                alert("짝");
+            }
+
+
+        });
+
+
+    </script>
+    
+</body>
+</html>

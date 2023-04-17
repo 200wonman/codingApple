@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험점수</title>
+</head>
+<body>
+    <input type="text" id="testA" placeholder="개론점수">
+    <input type="text" id="testB" placeholder="민법점수">
+    <button type="button" id="btn">결과보기</button>
+
+    <script>
+        const testA = document.getElementById('testA');
+        const testB = document.getElementById('testB');
+        const btn = document.getElementById('btn');
+
+
+        function deadLine (a, b) {
+            if(a < 40 || b < 40) {
+                alert("불합격");
+            } else if (a + b < 120){
+                alert("불합격");
+            } else {
+                alert("합격");
+            }
+        }
+
+        btn.addEventListener('click', function () {
+            const testAvalue = parseInt(testA.value);
+            const testBvalue = parseInt(testB.value);
+            deadLine(testAvalue, testBvalue);
+        });
+
+
+
+
+        // btn.addEventListener('click', function(){
+
+        //     if(testA.value < 40 || testB < 40) {
+        //         alert("불합격");
+        //     } else if (testA.value + testB < 120){
+        //         alert("불합격");
+        //     } else {
+        //         alert("합격");
+        //     }
+
+        // });
+
+    </script>
+    
+</body>
+</html>
