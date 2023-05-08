@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="alert alert-danger"> 
+        5초 이내 구매시 사은품 증정!
+    </div>
+
+    <div class="alert2 alert-danger"> 
+        5초 이내 구매시 사은품 증정!
+    </div>
+
+    <script>
+
+        const five = document.getElementsByClassName('alert')[0];
+
+        // 5초 뒤 실행
+        // setTimeout( function(){실행할 코드}, ms);
+        setTimeout( function(){
+            five.style.display = 'none';
+        }, 5000 );
+
+
+        // 5초마다 실행
+        // setInterval( function(){실행할 코드}, ms);
+        setInterval( function(){
+            console.log('hi');
+        }, 5000 );
+
+////////////////////////////////////////////////////////
+
+setTimeout( 함수, 5000 );
+
+function 함수() {
+    console.log('hihi');
+}
+
+////////////////////////////////////////////////////////
+
+// 1초마다 카운트 다운하기
+
+let count = 5;
+const alert2 = document.getElementsByClassName('alert2')[0];
+
+function countDown () {
+    count--;
+    alert2.innerHTML = count + "초 이내 구매시 사은품 증정!"; 
+}
+
+function hide (){
+    alert2.style.display = 'none';
+}
+
+setTimeout (  hide, 5000);
+setInterval ( countDown, 1000);
+
+    </script>
+</body>
+</html>

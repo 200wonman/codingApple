@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-dark{
+            background-color: black;
+            color: white;
+        }
+        .bg-light{
+            background-color: gray;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <span class="badge bg-dark">Dark 🔄</span>
+    <br>
+    <button id="btn"> click </button>
+    <script>
+        
+        
+        let name = 'kim';
+        //        let name = 'lee'; // 재선언 ㄴㄴ
+        name = 'lee'; // 재할당 ㅇㅇ
+        let lastName; // let은 재할당 가능하기때문에 선언시값 할당 안해도됨.
+        
+        const age = 20;
+//        const age = 10; // 재 선언 ㄴㄴ
+//        age = 10; // 재할당 ㄴㄴ
+//        그래서 const는 선언시 무조건 값 할당해야함.
+
+        function fuc() {
+            var a = a;
+            let b = b;
+            const c = c;
+        }
+        // console.log(a); // ㄴㄴ
+        // console.log(b); // ㄴㄴ
+        // console.log(c); // ㄴㄴ
+
+        if(true) {
+            var a1 = 'a1'; // function 지역변수 ㅇㅇ 다른 {} 안에선 전역변수 ㅇㅇ
+            let b1 = 'b1'; // 모두 지역변수
+            const c1 = 'c1'; // 모두 지역변수
+        }
+        console.log(a1); // ㅇㅇ
+        // console.log(b1); // ㄴㄴ
+        // console.log(c1); // ㄴㄴ
+
+        
+
+
+    </script>
+</body>
+</html>
