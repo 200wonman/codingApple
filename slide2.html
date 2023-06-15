@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .slide-container {
+            width: 300vw;
+            transition: all 1s;
+        }
+
+        .slide-box {
+            width: 100vw;
+            float: left;
+        }
+
+        .slide-box img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="c.png" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-control">이전</button>
+    <button class="slide-control">1</button>
+    <button class="slide-control">2</button>
+    <button class="slide-control">3</button>
+    <button class="slide-control">다음</button>
+
+    <script>
+        const buttons = document.getElementsByClassName('slide-control');
+        const slideContainer = document.getElementsByClassName('slide-container')[0];
+        let currentIndex = 0;
+
+        // 슬라이드 이동을 처리하는 함수를 정의합니다.
+        function moveToSlide(index) {
+            slideContainer.style.transform = `translateX(-${100 * index}vw)`;
+        }
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                if (i === 0) { // 이전 버튼
+                    currentIndex = currentIndex === 0 ? 2 : currentIndex - 1;
+                } else if (i === buttons.length - 1) { // 다음 버튼
+                    currentIndex = currentIndex === 2 ? 0 : currentIndex + 1;
+                } else { // 슬라이드 번호 버튼
+                    currentIndex = i - 1;
+                }
+                // 선택한 슬라이드로 이동합니다.
+                moveToSlide(currentIndex);
+            });
+        }
+    </script>
+</body>
+</html>
